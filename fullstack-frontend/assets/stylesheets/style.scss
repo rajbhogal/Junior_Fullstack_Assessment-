@@ -3,7 +3,7 @@
 
 // Header
 .main-header {
-  background-color: #7AC3B0;
+  background-color: $brand-color;
   width: 100%;
 
   &__container {
@@ -17,7 +17,7 @@
       justify-content: center;
     }
   }
-  
+
   &__logo {
     display: inline-block;
     width: 60px;
@@ -49,9 +49,12 @@
     font-size: 14px;
     padding: 10px 20px;
     display: inline-block;
+    transition-property: all;
+    transition-duration: 300ms;
 
     &:hover {
       color: #898989;
+      opacity: 0.65;
     }
   }
 }
@@ -82,7 +85,7 @@ main {
     font-weight: bold;
     margin-bottom: 10px;
     display: inline-block;
-    border-bottom: 3px solid #7AC3B0;
+    border-bottom: 3px solid $brand-color;
     padding-bottom: 5px;
     min-width: 150px;
     margin-bottom: 25px;
@@ -115,6 +118,16 @@ main {
     border: 3px solid #EFEFEF;
     padding: 20px;
 
+    // Gold background for the featured pet
+    &--featured {
+      border: 3px solid #FFD700;
+    }
+
+    // Green background for the family pet
+    &--family {
+      border: 3px solid #008000;
+    }
+
     &__title {
       text-align: center;
       font-size: 18px;
@@ -136,7 +149,7 @@ main {
       text-align: center;
       text-decoration: none;
       color: #fff;
-      background-color: #7AC3B0;
+      background-color: $brand-color;
       padding: 10px 0;
       border-radius: 5px;
       font-size: 14px;
@@ -152,7 +165,7 @@ main {
 
 // Footer
 .main-footer {
-  background-color: #7AC3B0;
+  background-color: $brand-color;
   width: 100%;
   padding: 20px 0;
 

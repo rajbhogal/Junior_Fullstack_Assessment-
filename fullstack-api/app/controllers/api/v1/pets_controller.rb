@@ -5,7 +5,8 @@ module Api
     class PetsController < ApplicationController
 
       def index
-        pets = []
+        pets = params[:species].present? ? Pet.where(species: params[:species]) : Pet # filter based on the species
+        pets = pets.order(:featured, :name) # orderd by featured and then name
         render json: pets, status: :ok
       end
 

@@ -5,7 +5,7 @@ const pushPet = pet => {
 }
 
 class Pet {
-  constructor(name, species, age, color, breed, favoriteFood, favoriteToy, featured = false) {
+  constructor(name, species, age, color, breed, favoriteFood, favoriteToy, featured = false, family = false) {
     this.name = name;
     this.species = species;
     this.age = age;
@@ -14,11 +14,15 @@ class Pet {
     this.favoriteFood = favoriteFood;
     this.favoriteToy = favoriteToy;
     this.featured = featured;
+    this.family = family;
   }
 
   generateCard() {
+    // Added class based on the featured or family pet
+    const featuredClass = this.featured == true ? 'pets__card--featured' : ''
+    const familyClass = this.family == true ? 'pets__card--family' : ''
     return `
-      <div class="pets__card">
+      <div class="pets__card ${featuredClass} ${familyClass}">
         <h2 class="pets__card__title">${this.name}</h2>
         <p class="pets__card__info">Species: ${this.species}</p>
         <p class="pets__card__info">Age: ${this.age}</p>
@@ -53,7 +57,8 @@ const fetchPets = species => {
         pet.breed,
         pet.favorite_food,
         pet.favorite_toy,
-        pet.featured
+        pet.featured,
+        pet.family
       ));
     });
   });

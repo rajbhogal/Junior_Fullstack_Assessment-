@@ -81,3 +81,15 @@ smokey = Pet.create(
   favorite_food: "fish",
   favorite_toy: "feather"
 )
+
+# Create Family Pet: Lucy
+lucy = Pet.create(
+  name: "Lucy",
+  species: "dog",
+  age: 5,
+  color: "brown",
+  breed: "bulldog",
+  favorite_food: "cow",
+  favorite_toy: "ball",
+  family: true
+)
